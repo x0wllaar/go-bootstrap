@@ -1,0 +1,6 @@
+go
+gorepo
+trees
+_go*.Makefile
+
+__pycache__
