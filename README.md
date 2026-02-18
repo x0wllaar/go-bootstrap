@@ -58,7 +58,15 @@ By default, https://go.googlesource.com/go is used. You can change this with an 
 GO_INSTALL_REPO="https://github.com/golang/go" make update-latest
 ```
 
-### Clean up
+### Custom C compiler
+
+By default, the default system C compiler with `-std=gnu17` flag will be used to compile Go 1.4. You can change this with an environment variable:
+
+```
+GO_INSTALL_CC="clang -std=gnu17" make update-latest
+```
+
+## Clean up
 
 Remove build trees:
 

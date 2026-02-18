@@ -3,6 +3,9 @@ default: update-latest
 GO_INSTALL_TARGET ?= "go"
 GO_INSTALL_REPO ?= "https://go.googlesource.com/go"
 
+GO_INSTALL_CC ?= $(CC) -std=gnu17
+export GO_INSTALL_CC
+
 clean: cleantrees
 	rm -rf gorepo
 	rm -r go || true
