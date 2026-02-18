@@ -19,21 +19,21 @@ repoupdate: gorepo
 	cd gorepo && git fetch --all
 
 latest: repoupdate
-	$(MAKE) $(shell cd gorepo && python ../getlatest.py)
+	$(MAKE) $(shell cd gorepo && bash ../getlatest.bash)
 
 install-latest: repoupdate
-	$(MAKE) install-$(shell cd gorepo && python ../getlatest.py)
+	$(MAKE) install-$(shell cd gorepo && bash ../getlatest.bash)
 
 cleantree-latest: repoupdate
-	$(MAKE) cleantree-$(shell cd gorepo && python ../getlatest.py)
+	$(MAKE) cleantree-$(shell cd gorepo && bash ../getlatest.bash)
 
 update-latest: repoupdate
-	$(MAKE) update-$(shell cd gorepo && python ../getlatest.py)
+	$(MAKE) update-$(shell cd gorepo && bash ../getlatest.bash)
 
 go%: prelude.Makefile repoupdate
 	cp prelude.Makefile _$@.Makefile
 	echo -e "\n\n" >> _$@.Makefile
-	python genmkf.py $@ >> _$@.Makefile
+	bash ./genmkf.bash $@ >> _$@.Makefile
 	$(MAKE) -f _$@.Makefile $@
 	rm _$@.Makefile
 

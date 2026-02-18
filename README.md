@@ -18,7 +18,6 @@ make
 ## Prerequisites
 
 - Git
-- Python
 - A C compiler
 - `make`
 - Standard Linux tools (bash etc)
