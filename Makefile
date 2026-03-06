@@ -19,7 +19,7 @@ gorepo:
 	git clone $(GO_INSTALL_REPO) gorepo
 
 repoupdate: gorepo
-	cd gorepo && git fetch --all && git pull
+	cd gorepo && git fetch --all --tags && git pull
 
 latest: repoupdate
 	$(MAKE) $(shell cd gorepo && bash ../getlatest.bash)
