@@ -35,7 +35,9 @@ update-latest: repoupdate
 
 go%: prelude.Makefile repoupdate
 	cp prelude.Makefile _$@.Makefile
-	echo -e "\n\n" >> _$@.Makefile
+	echo "" >> _$@.Makefile
+	echo "" >> _$@.Makefile
+	echo "" >> _$@.Makefile
 	bash ./genmkf.bash $@ >> _$@.Makefile
 	$(MAKE) -f _$@.Makefile $@
 	rm _$@.Makefile
